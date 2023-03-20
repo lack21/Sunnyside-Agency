@@ -1,0 +1,360 @@
+// lear
+// Sunnyside Agency
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow", sans-serif;
+}
+
+// Colors
+$softRed: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$darkDesaturatedCyan: hsl(167, 40%, 24%);
+$darkBlue: hsl(198, 62%, 26%);
+$darkModerateCyan: hsl(168, 34%, 60%);
+$veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+$veryDarkGrayishBlue: hsl(213, 9%, 39%);
+$darkGrayishBlue: hsl(232, 10%, 55%);
+$grayishBlue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// Header Section
+.header {
+  position: relative;
+  height: 100vh;
+  background-image: url(images/image-header.jpg);
+  background-size: cover;
+  background-position: center;
+
+  .links-btn {
+    display: none;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      list-style: none;
+
+      li {
+        color: $white;
+      }
+
+      .btn {
+        font-size: 0.975rem;
+        padding: 0.9rem 1.8rem;
+        background-color: $white;
+        color: $veryDarkDesaturatedBlue;
+        text-decoration: none;
+        font-family: "Fraunces", sans-serif;
+        border-radius: 2rem;
+        -webkit-border-radius: 2rem;
+        -moz-border-radius: 2rem;
+        -ms-border-radius: 2rem;
+        -o-border-radius: 2rem;
+
+        &:hover {
+          background-color: hsla(0, 0, 100%, 0.4);
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    place-content: center;
+    height: 60%;
+    grid-gap: 4rem;
+    text-align: center;
+
+    .title {
+      font-size: 3rem;
+      font-family: "Fraunces", sans-serif;
+      color: $white;
+      letter-spacing: 0.5rem;
+      font-weight: 900;
+    }
+
+    .arrow-down {
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+// About Section
+.about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  & > * {
+    height: 550px;
+    max-width: 50vw;
+  }
+
+  .text-content {
+    display: grid;
+    place-content: center;
+    padding: 5rem 10vw;
+
+    .heading {
+      font-size: 2.5rem;
+      font-family: "Fraunces", sans-serif;
+      font-weight: 900;
+      color: $veryDarkDesaturatedBlue;
+    }
+
+    .text {
+      color: $darkGrayishBlue;
+      line-height: 1.5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .btn {
+      font-family: "Fraunces", sans-serif;
+      text-decoration: none;
+      color: $veryDarkDesaturatedBlue;
+      font-weight: 900;
+
+      &::after {
+        content: "";
+        width: 130px;
+        height: 0.5rem;
+        background-color: $yellow;
+        display: block;
+        border-radius: 1rem;
+        -webkit-border-radius: 1rem;
+        -moz-border-radius: 1rem;
+        -ms-border-radius: 1rem;
+        -o-border-radius: 1rem;
+        margin: -0.4rem 0 0 -0.4rem;
+        opacity: 0.25;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &.second-btn::after {
+        background-color: $softRed !important;
+      }
+    }
+  }
+
+  .image-content {
+    background-image: url(images/image-transform.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &:nth-child(3) {
+      background-image: url(images/image-stand-out.jpg) !important;
+    }
+  }
+
+  .text-image-content {
+    display: grid;
+    padding: 3rem 12.5vw;
+    text-align: center;
+    place-content: end;
+    background-image: url(images/image-graphic-design.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &:last-of-type {
+      background-image: url(images/image-photography.jpg) !important;
+    }
+
+    .heading {
+      font-size: 1.8rem;
+      font-family: "Fraunces", sans-serif;
+      color: $darkDesaturatedCyan;
+      font-weight: 900;
+    }
+
+    .text {
+      margin-top: 1.5rem;
+      color: $darkDesaturatedCyan;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+// Testimonials Section
+.testimonials {
+  text-align: center;
+  padding: 8rem 10%;
+
+  .sub-heading {
+    font-family: "Fraunces", sans-serif;
+    font-size: 1.3rem;
+    color: $grayishBlue;
+    letter-spacing: 5px;
+  }
+
+  &-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 3rem;
+
+    .testimonial {
+      flex-basis: 100%;
+
+      img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+      }
+
+      .text {
+        margin: 3.5rem 0;
+        color: $veryDarkGrayishBlue;
+        line-height: 1.5rem;
+      }
+
+      .name {
+        font-family: "Fraunces", sans-serif;
+        font-weight: 900;
+        color: $veryDarkDesaturatedBlue;
+      }
+
+      .profession {
+        font-size: 0.9rem;
+        color: $grayishBlue;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// Images Section
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  img {
+    width: 100%;
+  }
+}
+
+// Footer Section
+.footer {
+  padding: 4rem 5%;
+  background-color: $darkModerateCyan;
+  text-align: center;
+
+  .logo {
+    filter: brightness(10%) sepia(5) saturate(50) hue-rotate(100deg);
+    -webkit-filter: brightness(10%) sepia(5) saturate(50) hue-rotate(100deg);
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 2.5rem 0 5rem;
+
+    .link {
+      text-decoration: none;
+      color: $darkDesaturatedCyan;
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    img {
+      color: $darkDesaturatedCyan;
+      cursor: pointer;
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 848px) {
+  .title {
+    font-size: 2.5rem !important;
+  }
+
+  .heading {
+    font-size: 1.6rem !important;
+  }
+
+  .about {
+    grid-template-columns: 1fr !important;
+
+    & > * {
+      width: 100%;
+      max-width: 100% !important;
+    }
+  }
+
+  .testimonials-row {
+    flex-direction: column;
+  }
+
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .links-btn {
+    display: block !important;
+    cursor: pointer;
+  }
+
+  .links {
+    position: absolute;
+    flex-direction: column;
+    top: -50vh;
+    left: calc(50% - 45vw);
+    width: 90vw;
+    background-color: $white;
+    gap: 2rem !important;
+    padding: 2rem;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+
+    &.active {
+      top: 15%;
+    }
+
+    li {
+      color: $darkGrayishBlue !important;
+    }
+
+    .btn {
+      background-color: $yellow !important;
+      color: $veryDarkDesaturatedBlue !important;
+    }
+
+    &::after {
+      content: "";
+      border-top: 30px solid transparent;
+      border-bottom: 30px solid transparent;
+      border-right: 30px solid $white;
+      position: absolute;
+      top: -30px;
+      right: 0;
+    }
+  }
+}
